@@ -81,9 +81,16 @@ namespace EFPlaygroundDA
             defaultItems.Add(new Item() { Name = "Bulbulator", Description = "Niezbędny w podróży", CategoryId = cat.Id, Category = cat });
             defaultItems.Add(new Item() { Name = "Otwieracz do wina", Description = "Must have", CategoryId = cat.Id, Category = cat });
             #endregion
+            
+            #region Lists Seed
+            IList<ListOfItems> defaultLists = new List<ListOfItems>();
+            defaultLists.Add(new ListOfItems() { Name = "Lista ubrań zimowych", Description = "Lista zawierająca wszystko dla wiecznych zmarzluchów" });
+            defaultLists.Add(new ListOfItems() { Name = "Kącik eleganta", Description = "Poniżej Vistuli nie schodzimy" });           
+            #endregion
 
             context.Categories.AddRange(defaultCategories);
             context.Items.AddRange(defaultItems);
+            context.ListsOfItems.AddRange(defaultLists);
             base.Seed(context);
         }
     }

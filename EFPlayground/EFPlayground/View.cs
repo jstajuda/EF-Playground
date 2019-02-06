@@ -31,6 +31,7 @@ namespace EFPlayground
             //korzystamy z już przygotowanych w obiekcie viewModel
             //a pobranych z bazy danych przez repozytorium
             var cats = viewModel.Categories;
+            var listy = viewModel.Lists;
 
             //działamy na danych - np wyświetlamy
             foreach (var cat in cats)
@@ -42,6 +43,17 @@ namespace EFPlayground
                     Console.WriteLine($"--{item.Name} [{item.Description}]");
                 }
             }
+
+            Console.WriteLine("--------------------");
+            Console.WriteLine("A takie mamy listy:");
+
+            foreach (var l in listy)
+            {
+                Console.WriteLine($"--{l.Name} [{l.Description}]");
+            }
+
+
+
         }
 
     }
