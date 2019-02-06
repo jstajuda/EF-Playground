@@ -65,6 +65,9 @@
   <ItemGroup>
     <Compile Include="Category.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ListOfItems.cs" />
+    <Compile Include="Param.cs" />
+    <Compile Include="ParamGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

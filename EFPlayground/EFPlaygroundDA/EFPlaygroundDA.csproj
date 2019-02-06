@@ -63,6 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ListOfItemsRepository.cs" />
+    <Compile Include="ParamGroupRepository.cs" />
+    <Compile Include="ParamRepository.cs" />
     <Compile Include="WalizkaAppContext.cs" />
     <Compile Include="CategoryRepository.cs" />
     <Compile Include="ItemRepository.cs" />

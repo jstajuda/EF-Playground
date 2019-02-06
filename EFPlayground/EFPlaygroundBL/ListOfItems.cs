@@ -8,19 +8,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EFPlaygroundBL
 {
-    [Table("Categories")]
-    public class Category
+    [Table("ListsOfItems")]
+    public class ListOfItems
     {
         [Key]
-        public int Id { get; set; }
+        public int ListId { get; set; }
 
-        [Required]
-        [StringLength(100)]
+        [StringLength(40)]
         public string Name { get; set; }
-        
+
         [StringLength(200)]
         public string Description { get; set; }
 
-        public virtual ICollection<Item> Items { get; set; } // relacja jeden-do-wielu
+        public virtual ICollection<Item> Items { get; set; }
     }
 }

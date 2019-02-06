@@ -23,5 +23,9 @@ namespace EFPlaygroundBL
 
         public int? CategoryId { get; set; } // pytajnik oznacza, że CategoryId może być null
         public virtual Category Category { get; set; }
+
+        public virtual ICollection<ListOfItems> Lists { get; set; }
+
+        public virtual ICollection<Param> Params { get; set; }
     }
 }
