@@ -26,6 +26,10 @@ namespace EFPlaygroundDA
 
         public DbSet<Item> Items { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<ListOfItems> ListsOfItems { get; set; }
+        public DbSet<Param> Params { get; set; }
+        public DbSet<ParamGroup> ParamsGroups { get; set; }
+       
     }
 
     public class WalizkaAppDBInitializer : DropCreateDatabaseAlways<WalizkaAppContext>
