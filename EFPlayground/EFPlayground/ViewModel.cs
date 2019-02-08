@@ -24,6 +24,7 @@ namespace EFPlayground
         // tworzymy instancję repozytorium, żeby później móc na nim działać
         private CategoryRepository catRepo = new CategoryRepository();
         private ListOfItemsRepository lRepo = new ListOfItemsRepository();
+        private ParamGroupRepository pgRepo = new ParamGroupRepository();
 
         public ViewModel()
         {
@@ -31,6 +32,8 @@ namespace EFPlayground
             // teraz w widoku mamy dostęp do pobranych danych
             Categories = catRepo.GetAll();
             Lists = lRepo.GetAll();
+            ParamsGroups = pgRepo.GetAll();
+
         }
 
     }
