@@ -13,6 +13,7 @@ namespace EFPlaygroundBL
     {
         [Key]
         [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ParamId { get; set; }
 
         [StringLength(40)]

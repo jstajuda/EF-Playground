@@ -17,15 +17,23 @@ namespace EFPlayground
         // tutaj lista dla uproszczenia
         public List<Item> Items { get; set; }
         public List<Category> Categories { get; set; }
+        public List<ListOfItems> Lists { get; set; }
+        public List<Param> Params { get; set; }
+        public List<ParamGroup> ParamsGroups { get; set; }
 
         // tworzymy instancję repozytorium, żeby później móc na nim działać
         private CategoryRepository catRepo = new CategoryRepository();
+        private ListOfItemsRepository lRepo = new ListOfItemsRepository();
+        private ParamGroupRepository pgRepo = new ParamGroupRepository();
 
         public ViewModel()
         {
             // do publicznej property ładujemy dane z repozytorium
             // teraz w widoku mamy dostęp do pobranych danych
             Categories = catRepo.GetAll();
+            Lists = lRepo.GetAll();
+            ParamsGroups = pgRepo.GetAll();
+
         }
 
     }

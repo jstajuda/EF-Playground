@@ -81,9 +81,46 @@ namespace EFPlaygroundDA
             defaultItems.Add(new Item() { Name = "Bulbulator", Description = "Niezbędny w podróży", CategoryId = cat.Id, Category = cat });
             defaultItems.Add(new Item() { Name = "Otwieracz do wina", Description = "Must have", CategoryId = cat.Id, Category = cat });
             #endregion
+            
+            #region Lists Seed
+            IList<ListOfItems> defaultLists = new List<ListOfItems>();
+            defaultLists.Add(new ListOfItems() { Name = "Lista ubrań zimowych", Description = "Lista zawierająca wszystko dla wiecznych zmarzluchów" });
+            defaultLists.Add(new ListOfItems() { Name = "Kącik eleganta", Description = "Poniżej Vistuli nie schodzimy" });
+            #endregion
+
+            #region ParamGroups Seed
+            IList<ParamGroup> defaultParamGroups = new List<ParamGroup>();
+            defaultParamGroups.Add(new ParamGroup() { Name = "Płeć", Description = "wartość typu bit gdyby ktoś miał wątpliwości" });
+            defaultParamGroups.Add(new ParamGroup() { Name = "Pora roku", Description = "wielkeigo wyboru nie ma" });
+            defaultParamGroups.Add(new ParamGroup() { Name = "Cel", Description = "miejsca przeróżne" });
+            #endregion
+
+            #region Params Seed
+            IList<Param> defaultParams = new List<Param>();
+            var gr = defaultParamGroups[0]; 
+            defaultParams.Add(new Param() { Name = "Kobieta", Description = "(bez opisu)", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Mężczyzna", Description = "(bez opisu)", GroupID = gr.ParamGroupId, ParamGroup = gr });
+
+            gr = defaultParamGroups[1]; 
+            defaultParams.Add(new Param() { Name = "Wiosna", Description = "Zielono mi", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Lato", Description = "Gorąco", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Jesień", Description = "Płonie", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Zima", Description = "Gelido in ogni vena", GroupID = gr.ParamGroupId, ParamGroup = gr });
+
+            gr = defaultParamGroups[2];
+            defaultParams.Add(new Param() { Name = "Góry", Description = "wycieczka górska", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Morze", Description = "plazing & smażing & co.", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Las", Description = "wincyj zieleni", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Miasto", Description = "betonowy las", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            defaultParams.Add(new Param() { Name = "Agrturystyka", Description = "krowy rzundzom", GroupID = gr.ParamGroupId, ParamGroup = gr });
+            #endregion
+
 
             context.Categories.AddRange(defaultCategories);
             context.Items.AddRange(defaultItems);
+            context.ListsOfItems.AddRange(defaultLists);
+            context.ParamsGroups.AddRange(defaultParamGroups);
+            context.Params.AddRange(defaultParams);
             base.Seed(context);
         }
     }

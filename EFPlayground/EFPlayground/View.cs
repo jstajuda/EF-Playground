@@ -31,6 +31,9 @@ namespace EFPlayground
             //korzystamy z już przygotowanych w obiekcie viewModel
             //a pobranych z bazy danych przez repozytorium
             var cats = viewModel.Categories;
+            var listy = viewModel.Lists;
+            var pg = viewModel.ParamsGroups;
+            
 
             //działamy na danych - np wyświetlamy
             foreach (var cat in cats)
@@ -42,6 +45,28 @@ namespace EFPlayground
                     Console.WriteLine($"--{item.Name} [{item.Description}]");
                 }
             }
+
+            Console.WriteLine("--------------------");
+            Console.WriteLine("A takie mamy listy:");
+
+            foreach (var l in listy)
+            {
+                Console.WriteLine($"--{l.Name} [{l.Description}]");
+            }
+            
+            Console.WriteLine("--------------------");
+            Console.WriteLine("A takie mamy grupy parametrów i parametry wsród nich:");
+
+            foreach (var pgr in pg)
+            {
+                Console.WriteLine("=========");
+                Console.WriteLine($"Grupa parametrów-{pgr.ParamGroupId}: {pgr.Name} [{pgr.Description}]");
+                foreach (var p in pgr.Params)
+                {
+                    Console.WriteLine($"--{p.Name} [{p.Description}]");
+                }
+            }
+
         }
 
     }
